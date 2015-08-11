@@ -1,5 +1,6 @@
-import { Schema } from 'hydraulik'
+// import { Schema } from 'hydraulik'
 
-@type(Str, name = 'name')
-export default class Todos extend Schema {
-}
+// @type(Str, name = 'title')
+// @type(Bool, name = 'checked', preset = false)
+// export default class Todos extend Schema {
+// }

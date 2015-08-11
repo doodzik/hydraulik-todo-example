@@ -23,10 +23,10 @@
   "homepage": "https://github.com/doodzik/hydraulik-todo-example",
   "dependencies": {
     "babel": "^5.4.7",
-    "babel-runtime": "^5.4.7",
+    "babel-runtime": "^5.8.20",
     "bower": "^1.4.1",
     "hammerjs": "^2.0.4",
-    "hydraulik": "^0.0.2",
+    "hydraulik": "^0.1.0",
     "hydraulik-types": "0.0.1",
     "koa": "^0.20.0",
     "koa-rewrite": "^1.1.0",

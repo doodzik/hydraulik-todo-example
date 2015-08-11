@@ -5,6 +5,4 @@ var klass = new Klass()
 
 sets.forEach(set => klass.push(require(`./${set}`)))
 
-articles.forEach(article => Article.create(require(`../articles/${article}/${article}`)))
-
 export default klass.sets

@@ -11,7 +11,10 @@ module.exports = {
       {
         test: [/.jsx?$/, /.js?$/],
         exclude: /(node_modules|bower_components)/,
-        loader: 'babel'
+        loader: 'babel',
+        query: {
+          optional: ['runtime', 'es7.decorators']
+        }
       },
       {
         test: /.styl$/,
