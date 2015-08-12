@@ -1,35 +1,60 @@
-class TodoVisibilitySwicher extends Component {
+import React,  { Component } from "react"
+import { nav } from '../sets/klass'
+// import { nav } from '../sets/klass'
+
+class VisibilitySwicher extends Component {
+  show = () => {
+    nav.update({}, { show_list: true })
+  }
+
+  hide = () => {
+    nav.update({}, { show_list: false })
+  }
+
+  switcher = () => {
+    var show_list = this.props.show_list
+    if(show_list === null || show_list === undefined || show_list === true)
+      nav.update({}, { show_list: false })
+    else
+      nav.update({}, { show_list: true })
+  }
+
   render() {
-    return (
-      <div></div>
-    )
+    var show_list = this.props.show_list
+    if(show_list === null || show_list === undefined || show_list === true)
+      return <div onClick={this.switcher}>hide todos</div>
+    else
+      return <div onClick={this.switcher}>show todos</div>
+    // if(show_list === null || show_list === undefined || show_list === true)
+    //   return <div onClick={this.hide}>hide todos</div>
+    // else
+    //   return <div onClick={this.show}>show todos</div>
   }
 }
 
-class TodoInput extends Component {
-  create(){
-    // create element in store
-    // clear input
+class Input extends Component {
+  createTodo = (input) => {
+    // todo.create(input.value)
+    input.value = ''
   }
 
-  componentDidMount() {
-    this.refs.input.on('keydown', e => {
-      if(e.keycode === 'bla')
-        this.create()
-    }
+  pressEnter = (e) => {
+    e.persist()
+    if(e.keyCode == 13)
+      this.createTodo(e.target)
   }
 
   render() {
-    return <input ref='input'/>
+    return <input type='text' onKeyDown={this.pressEnter}/>
   }
 }
 
-class TodoHeader extends Component {
+export default class Header extends Component {
   render() {
     return (
       <div>
-        <TodoVisibilitySwicher />
-        <TodoInput />
+        <VisibilitySwicher {...this.props} />
+        <Input />
       </div>
     )
   }
