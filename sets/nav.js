@@ -4,7 +4,7 @@ import Str                   from 'hydraulik-types/lib/str'
 import Type                  from 'hydraulik-types/lib/type'
 
 @set(Set)
-@type(Str, 'view', 'all')
+@type(Str, 'view')
 @type(Type, 'show_list')
 export default class Nav extends Schema {}
 

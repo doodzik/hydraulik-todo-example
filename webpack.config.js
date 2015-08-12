@@ -13,7 +13,7 @@ module.exports = {
         exclude: /(node_modules|bower_components)/,
         loader: 'babel',
         query: {
-          optional: ['runtime', 'es7.decorators']
+          optional: ['es7.functionBind', 'es7.classProperties', 'es7.decorators']
         }
       },
       {
