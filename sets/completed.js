@@ -1,10 +1,12 @@
-// import { Schema } from 'hydraulik'
-// import Todos from './todos'
+import Schema, { set, type } from 'hydraulik'
+// import Bool                  from 'hydraulik-types/lib/bool'
+import Type                  from 'hydraulik-types/lib/type'
+import Todos from './todos'
 
-// @type(Bool, name = 'checked', default = true)
-// export default class Completed extend Todos {
-//   filter(elm) {
-//     return elm.checked
-//   }
-// }
-
+@type(Type, 'checked', true)
+// @type(Bool, 'checked')
+export default class Completed extends Todos {
+  filter(elm) {
+    return elm.checked
+  }
+}

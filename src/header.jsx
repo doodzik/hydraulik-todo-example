@@ -1,19 +1,20 @@
 import React,  { Component } from "react"
-import { nav } from '../sets/klass'
-// import { nav } from '../sets/klass'
+import { nav, todos } from '../sets/klass'
 
 class VisibilitySwicher extends Component {
-  show = () => {
-    nav.update({}, { show_list: true })
-  }
-
-  hide = () => {
-    nav.update({}, { show_list: false })
-  }
+  // show = () => nav.update({}, { show_list: true })
+  // hide = () => nav.update({}, { show_list: false })
+  // render() {
+  //   var show_list = this.props.show_list
+  //   if(show_list)
+  //     return <div onClick={this.hide}>hide todos</div>
+  //   else
+  //     return <div onClick={this.show}>show todos</div>
+  // }
 
   switcher = () => {
     var show_list = this.props.show_list
-    if(show_list === null || show_list === undefined || show_list === true)
+    if(show_list)
       nav.update({}, { show_list: false })
     else
       nav.update({}, { show_list: true })
@@ -25,16 +26,12 @@ class VisibilitySwicher extends Component {
       return <div onClick={this.switcher}>hide todos</div>
     else
       return <div onClick={this.switcher}>show todos</div>
-    // if(show_list === null || show_list === undefined || show_list === true)
-    //   return <div onClick={this.hide}>hide todos</div>
-    // else
-    //   return <div onClick={this.show}>show todos</div>
   }
 }
 
 class Input extends Component {
   createTodo = (input) => {
-    // todo.create(input.value)
+    todos.create({ title: input.value, checked: false })
     input.value = ''
   }
 

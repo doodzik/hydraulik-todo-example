@@ -1,5 +1,5 @@
 import React,  { Component } from "react"
-import { nav } from '../sets/klass'
+import { nav, active, completed } from '../sets/klass'
 
 class Link extends Component {
   onClick = () => {
@@ -14,16 +14,18 @@ class Link extends Component {
   }
 }
 
-export default class Footer extends Component {
+export default active.Component(class {
   render() {
+    const active = this.props.active || [],
+          todos  = active.length || 0
     return (
       <div>
-        <div>{this.props.todosCount}</div>
+        <div>{todos}</div>
         <Link to='all' active={this.props.view}/>
         <Link to='active' active={this.props.view}/>
         <Link to='completed' active={this.props.view}/>
       </div>
     )
   }
-}
+})
 

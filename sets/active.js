@@ -1,9 +1,13 @@
-// import { Schema } from 'hydraulik'
-// import Todos from './todos'
+import Schema, { set, type } from 'hydraulik'
+// import Bool                  from 'hydraulik-types/lib/bool'
+import Type                  from 'hydraulik-types/lib/type'
+import Todos from './todos'
 
-// export default class Active extend Todos {
-//   filter(elm) {
-//     return !elm.checked
-//   }
-// }
+@type(Type, 'checked', false)
+// @type(Bool, 'checked')
+export default class Active extends Todos {
+  filter(elm) {
+    return !elm.checked
+  }
+}
 
