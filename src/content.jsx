@@ -1,4 +1,5 @@
 import React,  { Component }        from "react"
+import Todo                         from './element.jsx'
 import { todos, active, completed } from '../sets/klass'
 
 class TodoList extends Component {
@@ -6,7 +7,7 @@ class TodoList extends Component {
     var todos = this.props.todos || []
     return (<ul>
               {todos.map(function(todo, index){
-                return <li key={index}>{todo.title}</li>;
+                return <li key={index}><Todo todo={todo} /></li>;
               })}
             </ul>)
   }
